@@ -17,11 +17,12 @@ public class Timer {
 		System.out.println(jp.getSignature());
 		
 		long start = System.currentTimeMillis();		
-		jp.proceed();
+		Result result = (Result)jp.proceed();
 		long end = System.currentTimeMillis();
 		
 		System.out.println("경과 시간: " + (end - start));
 		
-		return null;
+		result.setResult(result.getResult() + "(clock)");
+		return result;
 	}
 }

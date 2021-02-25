@@ -1,4 +1,4 @@
-package spring.core.ch02.ex02;
+package spring.core.ch02.ex03;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -8,17 +8,7 @@ public class Main {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 		
 		Calculator calculator = ctx.getBean(Calculator.class);
-		Rabbit rabbit = ctx.getBean(Rabbit.class);
 		
-		System.out.println(calculator.calc().getResult());
-		System.out.println(rabbit.sleep().getResult());
+		System.out.println(calculator.calc(1));
 	}
 }
-/*
-Result spring.core.ch02.ex02.Calculator.calc()
-경과 시간: 989
-1(clock)
-Result spring.core.ch02.ex02.Rabbit.sleep()
-경과 시간: 588
-zzz(clock)
-*/
